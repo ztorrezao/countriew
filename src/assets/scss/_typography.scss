@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Ubuntu';
+}
+
+h1, h2, h3 {
+ font-weight: 700;
+}
+
+h1 {
+  font-size: $s9;
+}
+
+h2 {
+  font-size: $s7;
+}
+
+p {
+  font-size: $s6;
+}
+

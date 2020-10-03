@@ -1,0 +1,13 @@
+// box-reset
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// unity reset
+html, :root {
+  font-size: 10px;
+}
