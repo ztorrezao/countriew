@@ -1,0 +1,71 @@
+@import "../../assets/scss/variables";
+
+.countries {
+  background-color: $gray-300;
+  padding: $s16 0;
+
+
+  .countries-count,
+  .btn-option,
+  .layout-options button {
+    margin-bottom: $s8;
+    font-size: $s5;
+  }
+
+  button.btn-option,
+  .layout-options button {
+    border: 1px solid $gray-500;
+    background-color: $gray-100;
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $trn3;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: $primary;
+      border-color: $primary;
+    }
+
+    .btn-icon {
+      font-size: $s6;
+      height: $s6;
+      overflow: hidden;
+      display: inline-block;
+      margin-left: $s2;
+    }
+  }
+
+  .btn-option {
+    border-radius: $s14;
+    padding: $s4 $s8;
+  }
+
+  .layout-options {
+    display: none;
+
+    button {
+      padding: $s4;
+
+
+      &.btn-grid-layout{
+        border-radius: $s14 0 0 $s14;
+      }
+
+      &.btn-table-layout{
+        border-radius: 0 $s14 $s14 0;
+      }
+
+      .btn-icon {
+        margin: 0;
+        font-size: $s6;
+        height: $s6;
+        width: $s6;
+        overflow: hidden;
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 body, input, button, textarea {
   font-family: 'Ubuntu';
+  color: $secondary;
 }
 
 h1, h2, h3 {
@@ -10,10 +11,13 @@ h1, h2, h3 {
 
 h1 {
   font-size: $s9;
+  margin-bottom: $s8;
 }
 
 h2 {
   font-size: $s7;
+  margin-bottom: $s8;
+
 }
 
 p {

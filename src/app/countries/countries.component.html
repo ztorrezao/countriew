@@ -2,18 +2,21 @@
   <div class="container">
     <h1>Países</h1>
 
-    <div class="row">
+    <div class="row flex-column">
       <small class="countries-count">
         <strong>196</strong> de 196 países
       </small>
 
-      <div class="options">
-        <button>Filtrar por continentes <i-bs name="chevron-down"></i-bs></button>
-        <button>Exportar todos países <i-bs name="download"></i-bs></button>
-        <div class="layout-options">
-          <button><i-bs name="grid"></i-bs></button>
-          <button><i-bs name="grid-3x2"></i-bs></button>
-        </div>
+      <button class="btn-option">Filtrar por continentes <i-bs class="btn-icon" name="chevron-down"></i-bs></button>
+      <button class="btn-option">Exportar dados listados <i-bs class="btn-icon" name="download"></i-bs></button>
+
+      <div class="layout-options">
+        <button class="btn-grid-layout active">
+          <i-bs class="btn-icon" name="grid"></i-bs>
+        </button>
+        <button class="btn-table-layout">
+          <i-bs class="btn-icon" name="grid-3x2"></i-bs>
+        </button>
       </div>
     </div>
 
