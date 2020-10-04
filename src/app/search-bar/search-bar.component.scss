@@ -1,0 +1,49 @@
+@import "../../assets/scss/variables";
+
+.search-bar {
+  width: 100%;
+  height: $s14;
+  display: flex;
+  align-items: center;
+  padding-left: $s7;
+  padding-right: $s1;
+  background-color: $gray-100;
+  border-radius: $s16;
+  overflow: hidden;
+
+  label {
+    display: inline-block;
+    font-size: $s8;
+    height: $s8;
+    width: $s8;
+    min-width: $s8;
+    color: $secondary;
+    overflow: hidden;
+    margin-right: $s1;
+  }
+
+  input {
+    flex-basis: 0;
+    flex-grow: 1;
+
+    display: inline-block;
+    padding: $s3;
+
+    color: $secondary;
+    font-size: $s6;
+    font-weight: $light;
+  }
+
+  button {
+    display: none;
+
+    text-align: center;
+    padding: $s3 $s14;
+    border-radius: $s14;
+
+    font-size: $s6;
+    font-weight: $medium;
+    color: $white;
+    background-color: $primary;
+  }
+}
