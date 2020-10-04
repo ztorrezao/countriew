@@ -12,9 +12,17 @@ html, :root {
   font-size: 10px;
 }
 
-// button reset
-button {
-  cursor: pointer;
+// input & button reset
+button, input {
   border: none;
   background-color: $gray-100;
+  overflow: hidden;
+
+  &:focus, &:active {
+    @include outline;
+  }
+}
+
+button {
+  cursor: pointer;
 }

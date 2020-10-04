@@ -1,0 +1,17 @@
+@import '../../assets/scss/variables';
+
+.hero {
+  padding: $s16 0;
+
+  text-align: center;
+  background-color: $primary;
+  color: $white;
+
+  h1 {
+    margin-bottom: $s14;
+  }
+
+  p {
+    display: none;
+  }
+}
