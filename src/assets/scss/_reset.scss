@@ -11,3 +11,10 @@
 html, :root {
   font-size: 10px;
 }
+
+// button reset
+button {
+  cursor: pointer;
+  border: none;
+  background-color: $gray-100;
+}

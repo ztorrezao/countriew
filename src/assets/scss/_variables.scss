@@ -7,7 +7,7 @@ $gray-400: #E8EEF2;
 $gray-300: #F2F6F8;
 $gray-100: #FCFDFD;
 
-$wite:  #fff;
+$white:  #fff;
 $black: #000;
 
 $transparent-xs: rgba($primary, .9);
@@ -30,3 +30,6 @@ $s13: 4.2rem;
 $s14: 4.5rem;
 $s15: 5.4rem;
 $s16: 6rem;
+
+// default transition:
+$trn3: all .3s ease-in-out;

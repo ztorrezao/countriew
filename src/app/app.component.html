@@ -1,25 +1,40 @@
 <header>
   <div class="container">
-    <div class="row">
+    <div class="row pos-relative align-items-center py-3">
       <!-- logo -->
       <img class="logo" src="../assets/img/logo.svg" alt="Logotipo Countriew">
 
       <!-- alternative searchbar -->
-      <div class="col">
+      <!-- <div class="col">
         <app-search-bar></app-search-bar>
-      </div>
+      </div> -->
 
-      <!-- main nav -->
-      <i-bs name="list"></i-bs>
-      <nav>
+      <!-- mobile nav toogle -->
+      <button class="mobile-nav-toggle">
+        <i-bs name="list"></i-bs>
+      </button>
+
+      <!-- desktop nav -->
+      <nav class="desktop">
         <ul>
-          <li><a href="">Países</a></li>
+          <li><a href="" class="active">Países</a></li>
           <li><a href="">Sobre</a></li>
           <li><a href="">Contribuir</a></li>
         </ul>
       </nav>
     </div>
   </div>
+
+  <nav class="mobile">
+    <button class="btn-close">
+      <i-bs name="x"></i-bs>
+    </button>
+    <ul>
+      <li><a href="" class="active">Países</a></li>
+      <li><a href="">Sobre</a></li>
+      <li><a href="">Contribuir</a></li>
+    </ul>
+  </nav>
 </header>
 
 <app-hero></app-hero>

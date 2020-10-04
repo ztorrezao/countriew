@@ -10,7 +10,8 @@ import {
   Grid,
   Table,
   Flag,
-  Grid3x2
+  Grid3x2,
+  X
 } from 'ngx-bootstrap-icons';
 
 import { AppComponent } from './app.component';
@@ -29,7 +30,8 @@ const icons = {
   Grid,
   Table,
   Flag,
-  Grid3x2
+  Grid3x2,
+  X
 };
 
 @NgModule({
