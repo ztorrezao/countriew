@@ -1,9 +1,17 @@
-@mixin outline {
-  border: none;
-  outline: none;
-}
-
-
+// default shadow
 @mixin shadow {
   box-shadow: 0 $s3 $s9 $transparent-xs;
+}
+
+// media queries
+@mixin tablet {
+  @media (min-width: #{$tablet-breakpoint}) and (max-width: #{$desktop-breakpoint - .1rem}){
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-breakpoint}) {
+    @content;
+  }
 }

@@ -8,18 +8,22 @@
 }
 
 // unity reset
-html, :root {
+html,
+:root {
   font-size: 10px;
 }
 
 // input & button reset
-button, input {
+button,
+input {
   border: none;
   background-color: $gray-100;
   overflow: hidden;
 
-  &:focus, &:active {
-    @include outline;
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
   }
 }
 

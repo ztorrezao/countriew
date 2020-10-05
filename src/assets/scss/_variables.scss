@@ -37,5 +37,11 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 
-// default transition:
+// ========= transitions
 $trn3: all .3s ease-in-out;
+
+
+// ========= screen sizes
+$tablet-breakpoint: 76.8rem;
+$desktop-breakpoint: 102.4rem;
+
