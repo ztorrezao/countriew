@@ -99,3 +99,45 @@ header {
     }
   }
 }
+
+footer {
+  background-color: $secondary;
+  padding: $s9 0;
+  color: $white;
+
+  .logo {
+    margin-bottom: $s8;
+  }
+
+  p {
+    font-weight: $light;
+    text-align: center;
+    margin-bottom: $s8;
+
+    strong {
+      font-weight: $medium;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+      &:not(:last-child) {
+        margin-right: $s6;
+      }
+
+      a {
+        text-decoration: none;
+        display: inline-block;
+        // padding: $s2;
+
+        img {
+          width: $s8;
+          height: auto;
+        }
+      }
+    }
+  }
+}
