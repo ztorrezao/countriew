@@ -2,3 +2,8 @@
   border: none;
   outline: none;
 }
+
+
+@mixin shadow {
+  box-shadow: 0 $s3 $s9 $transparent-xs;
+}

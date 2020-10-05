@@ -1,0 +1,89 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.country-card {
+  width: 100%;
+  background-color: $gray-100;
+  border: 0.1rem solid $gray-300;
+  border-radius: $s3;
+  padding: $s9 $s7;
+  transition: $trn3;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-$s4);
+    @include shadow;
+  }
+
+  h2 {
+    padding-right: calc(#{$s14} + #{$s1});
+  }
+
+  .img-flag {
+    width: $s14;
+    height: auto;
+    border-radius: $s14;
+    position: absolute;
+    top: $s9;
+    right: $s7;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      font-size: $s5;
+      margin-bottom: $s7;
+
+      strong {
+        font-weight: $medium;
+      }
+
+      &.options {
+        margin-top: $s9;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        button {
+          font-size: $s4;
+          font-weight: $regular;
+          padding: $s4 $s6;
+          border: 0.1rem solid $primary;
+          border-radius: $s14;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: $s2;
+          transition: $trn3;
+
+          .icon {
+            font-size: $s5;
+            height: $s5;
+            margin-left: $s2;
+          }
+
+          &.btn-flag {
+            color: $primary;
+            margin-right: $s3;
+
+            &:hover {
+              color: $white;
+              background-color: $primary;
+            }
+          }
+
+          &.btn-download {
+            color: $white;
+            background-color: $primary;
+
+            &:hover {
+              background-color: darken($primary, 9%);
+              border-color: darken($primary, 9%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
