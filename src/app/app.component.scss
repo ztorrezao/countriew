@@ -25,22 +25,43 @@ header {
     margin-left: auto;
     display: none;
 
-    ul{
+    ul {
       display: flex;
       list-style: none;
 
       li a {
+        position: relative;
         display: inline-block;
         text-decoration: none;
-        color: $white;
+        color: $gray-300;
         font-size: $s6;
+        padding: $s6 0 0 $s6;
+
         transition: $trn3;
 
-        padding: $s6 0 0 $s6;
+        &::after {
+          content: " ";
+          position: absolute;
+          width: 0;
+          height: $s1;
+          background-color: $white;
+          bottom: -$s2;
+          left: $s6;
+          border-radius: $s2;
+          transition: all .3s ease-in;
+        }
+
+        &:hover,
+        &.active {
+          color: $white;
+
+          &::after {
+            width: calc(100% - #{$s6});
+          }
+        }
       }
     }
   }
-
 
   // mobile nav
   nav.mobile {
@@ -108,11 +129,10 @@ header {
       display: none;
     }
 
-    nav.desktop{
+    nav.desktop {
       display: block;
     }
   }
-
 }
 
 footer {
