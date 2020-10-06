@@ -1,14 +1,14 @@
-<div class="country-card">
-  <img class="img-flag" src="https://restcountries.eu/data/afg.svg" alt="Bandeira Afegan">
-  <h2>Afghanistan</h2>
+<div class="country-card" *ngIf="country">
+  <img class="img-flag" src="{{country.flag}}" alt="Bandeira {{country.demonym}}">
+  <h2>{{country.name}}</h2>
   <ul>
-    <li><strong>Nome nataivo:&nbsp;&nbsp;</strong>افغانستان</li>
-    <li><strong>Capital:&nbsp;&nbsp;</strong>Kabul</li>
-    <li><strong>Região:&nbsp;&nbsp;</strong>Asia</li>
-    <li><strong>Sub-região:&nbsp;&nbsp;</strong>Southern Asia</li>
-    <li><strong>População:&nbsp;&nbsp;</strong>27657145</li>
-    <li><strong>Área:&nbsp;&nbsp;</strong>652230.0</li>
-    <li><strong>Fuso horário:&nbsp;&nbsp;</strong>UTC+04:30</li>
+    <li><strong>Nome nataivo:&nbsp;&nbsp;</strong>{{country.nativeName}}</li>
+    <li><strong>Capital:&nbsp;&nbsp;</strong>{{country.capital}}</li>
+    <li><strong>Região:&nbsp;&nbsp;</strong>{{country.region}}</li>
+    <li><strong>Sub-região:&nbsp;&nbsp;</strong>{{country.subregion}}</li>
+    <li><strong>População:&nbsp;&nbsp;</strong>{{country.population}}</li>
+    <li><strong>Área:&nbsp;&nbsp;</strong>{{country.area}}</li>
+    <li><strong>Fuso horário:&nbsp;&nbsp;</strong>{{country.timezones}}</li>
     <li class="options">
       <button class="btn-flag">Visualizar a bandeira <i-bs class="icon" name="flag"></i-bs></button>
       <button class="btn-download">Exportar <i-bs class="icon" name="download"></i-bs></button>

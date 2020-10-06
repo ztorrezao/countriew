@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import {
@@ -21,6 +22,7 @@ import { CountryComponent } from './country/country.component';
 import { CountryCardComponent } from './country-card/country-card.component';
 import { AboutComponent } from './about/about.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SquareKilometerPipe } from './square-kilometer.pipe';
 
 const icons = {
   List,
@@ -43,9 +45,11 @@ const icons = {
     CountryCardComponent,
     AboutComponent,
     SearchBarComponent,
+    SquareKilometerPipe,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgxBootstrapIconsModule.pick(icons)
   ],
   providers: [],

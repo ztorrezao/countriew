@@ -9,6 +9,7 @@
   padding: $s9 $s7;
   transition: $trn3;
   position: relative;
+  margin-bottom: $s14;
 
   &:hover {
     transform: translateY(-$s4);
@@ -34,6 +35,7 @@
     li {
       font-size: $s5;
       margin-bottom: $s7;
+      word-wrap: break-word;
 
       strong {
         font-weight: $medium;
