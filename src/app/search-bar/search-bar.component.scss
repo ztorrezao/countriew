@@ -49,6 +49,12 @@
     color: $white;
     background-color: $primary;
 
+    transition: $trn3;
+
+    &:hover{
+      background-color: darken($primary, 9%);
+    }
+
     @include desktop {
       display: flex;
     }

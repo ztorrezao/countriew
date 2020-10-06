@@ -10,7 +10,7 @@
       </div> -->
 
       <!-- mobile nav toogle -->
-      <button class="mobile-nav-toggle">
+      <button class="mobile-nav-toggle" (click)="openMobileNav()">
         <i-bs name="list"></i-bs>
       </button>
 
@@ -25,8 +25,8 @@
     </div>
   </div>
 
-  <nav class="mobile">
-    <button class="btn-close">
+  <nav class="mobile {{isMobileNavOpen ? 'opened' : ''}}">
+    <button class="btn-close" (click)="closeMobileNav()">
       <i-bs name="x"></i-bs>
     </button>
     <ul>

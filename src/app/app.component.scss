@@ -33,7 +33,7 @@ header {
         position: relative;
         display: inline-block;
         text-decoration: none;
-        color: $gray-300;
+        color: $white;
         font-size: $s6;
         padding: $s6 0 0 $s6;
 
@@ -53,8 +53,6 @@ header {
 
         &:hover,
         &.active {
-          color: $white;
-
           &::after {
             width: calc(100% - #{$s6});
           }
