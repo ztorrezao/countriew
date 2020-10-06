@@ -9,3 +9,20 @@
   padding-top: $s3;
   padding-bottom: $s3;
 }
+
+
+// margins
+
+
+// resposive
+@include tablet {
+  .ml-md-auto {
+    margin-left: auto;
+  }
+}
+
+@include desktop {
+  .ml-lg-auto {
+    margin-left: auto;
+  }
+}

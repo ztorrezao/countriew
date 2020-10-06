@@ -3,15 +3,33 @@
   box-shadow: 0 $s3 $s9 $transparent-xs;
 }
 
+// columns
+@mixin col($span) {
+  $x: 12/$span;
+  width: calc((100%/#{$x}) - #{$s9});
+}
+
 // media queries
+@mixin phone {
+  @media (min-width: $phone-breakpoint){
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media (min-width: #{$tablet-breakpoint}) and (max-width: #{$desktop-breakpoint - .1rem}){
+  @media (min-width: $tablet-breakpoint){
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (min-width: $desktop-sm-breakpoint) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop-breakpoint}) {
+  @media (min-width: $desktop-breakpoint) {
     @content;
   }
 }

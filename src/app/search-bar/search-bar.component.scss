@@ -48,5 +48,9 @@
     font-weight: $medium;
     color: $white;
     background-color: $primary;
+
+    @include desktop {
+      display: flex;
+    }
   }
 }

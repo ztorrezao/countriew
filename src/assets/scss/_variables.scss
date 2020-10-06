@@ -42,6 +42,7 @@ $trn3: all .3s ease-in-out;
 
 
 // ========= screen sizes
-$tablet-breakpoint: 76.8rem;
-$desktop-breakpoint: 102.4rem;
-
+$phone-breakpoint: 576px;
+$tablet-breakpoint: 768px;
+$desktop-sm-breakpoint: 992px;
+$desktop-breakpoint: 1200px;

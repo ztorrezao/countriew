@@ -1,4 +1,5 @@
 @import "../assets/scss/variables";
+@import "../assets/scss/mixins";
 
 header {
   background-color: $primary;
@@ -19,6 +20,7 @@ header {
     font-size: $s13;
   }
 
+  // desktop nav
   nav.desktop {
     margin-left: auto;
     display: none;
@@ -38,6 +40,7 @@ header {
       }
     }
   }
+
 
   // mobile nav
   nav.mobile {
@@ -98,6 +101,18 @@ header {
       opacity: 1;
     }
   }
+
+  // set responsive behavior to the nav
+  @include desktop {
+    button.mobile-nav-toggle {
+      display: none;
+    }
+
+    nav.desktop{
+      display: block;
+    }
+  }
+
 }
 
 footer {
@@ -138,6 +153,16 @@ footer {
           height: auto;
         }
       }
+    }
+  }
+
+  @include desktop {
+    .logo {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 0;
     }
   }
 }

@@ -1,4 +1,5 @@
-@import '../../assets/scss/variables';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .hero {
   padding: $s16 0;
@@ -13,5 +14,16 @@
 
   p {
     display: none;
+  }
+
+  @include desktop {
+    h1 {
+      margin-bottom: $s9;
+    }
+
+    p {
+      margin-bottom: $s14;
+      display: block;
+    }
   }
 }
