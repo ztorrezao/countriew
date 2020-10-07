@@ -78,7 +78,7 @@ export class FileService {
    * saveImage
    */
   public saveImageSVG(URL: string, name: string) {
-    FileSaver.saveAs(URL, `bandeira_${name}.svg`);
+    FileSaver.saveAs(URL, `${name}.svg`);
   }
 
   private saveAsFile(

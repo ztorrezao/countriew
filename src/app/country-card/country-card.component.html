@@ -1,4 +1,4 @@
-<div class="country-card" *ngIf="country">
+<div class="country-card"  *ngIf="this.country">
   <img class="img-flag" src="{{country.flag}}" alt="Bandeira {{country.demonym}}">
   <h2>{{country.name}}</h2>
   <ul>
@@ -10,7 +10,16 @@
     <li><strong>Área:&nbsp;&nbsp;</strong>{{country.area | squareKilometer}}</li>
     <li><strong>Fuso horário:&nbsp;&nbsp;</strong>{{country.timezones}}</li>
     <li class="options">
-      <button class="btn-download">Exportar <i-bs class="icon" name="download"></i-bs></button>
+      <!-- export dropdown -->
+      <div class="dropdown">
+        <button class="btn-download dropdown-btn">Exportar <i-bs class="icon" name="download"></i-bs></button>
+        <div class="dropdown-content">
+          <a href="#" (click)="downloadCSV()">CSV</a>
+          <a href="#" (click)="downloadXLS()">XLS</a>
+          <a href="#" (click)="downloadXLSX()">XLSX</a>
+        </div>
+      </div>
+
       <button class="btn-flag" (click)="openPopup()">Visualizar a bandeira <i-bs class="icon" name="flag"></i-bs></button>
     </li>
   </ul>

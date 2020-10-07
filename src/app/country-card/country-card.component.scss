@@ -47,6 +47,45 @@
         display: flex;
         flex-wrap: wrap;
 
+        .dropdown {
+          position: relative;
+          display: inline-block;
+          text-align: right;
+
+          &-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            bottom: $s14;
+            background-color: $gray-100;
+            min-width: 21.3rem;
+            text-align: left;
+            @include shadow;
+            z-index: 9000;
+
+            a {
+              color: $secondary;
+              padding: $s4 $s5;
+              text-decoration: none;
+              display: block;
+
+              &:hover {
+                background-color: $gray-400;
+              }
+            }
+          }
+
+          &:hover {
+            .dropdown-content {
+              display: block;
+            }
+            .dropdown-btn {
+              color: $white;
+              background-color: $primary;
+            }
+          }
+        }
+
         button {
           font-size: $s4;
           font-weight: $medium;
