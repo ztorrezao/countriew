@@ -3,6 +3,10 @@
   box-shadow: 0 $s3 $s9 $transparent-xs;
 }
 
+@mixin shadow-secondary {
+  box-shadow: 0 $s3 $s9 $transparent-secondary-md;
+}
+
 // columns
 @mixin col($span) {
   $x: 12/$span;

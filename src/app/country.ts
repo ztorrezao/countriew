@@ -8,5 +8,5 @@ export interface Country {
   demonym: string,
   area: number,
   flag: string,
-  timezones: string
+  timezones: string,
 }

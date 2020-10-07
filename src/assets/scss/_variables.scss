@@ -10,8 +10,10 @@ $gray-100: #FCFDFD;
 $white:  #fff;
 $black: #000;
 
-$transparent-xs: rgba($primary, .09);
-$transparent-lg: rgba($primary, .6);
+$transparent-xs: rgba($secondary, .12);
+$transparent-lg: rgba($secondary, .6);
+
+$transparent-secondary-md: rgba($secondary, .3);
 
 // ======== spaces
 $s1: .3rem;
@@ -39,6 +41,8 @@ $bold: 700;
 
 // ========= transitions
 $trn3: all .3s ease-in-out;
+$trn2: all .2s ease-in-out;
+$trn1: all .1s ease-in-out;
 
 
 // ========= screen sizes

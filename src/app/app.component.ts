@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Countriew';
+
   isMobileNavOpen: boolean = false;
+
+  isSearchMode: boolean;
 
   openMobileNav() {
     this.isMobileNavOpen = true;
@@ -15,5 +18,9 @@ export class AppComponent {
 
   closeMobileNav() {
     this.isMobileNavOpen = false;
+  }
+
+  checkSearchMode($event){
+    this.isSearchMode = $event;
   }
 }

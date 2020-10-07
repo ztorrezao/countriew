@@ -1,5 +1,5 @@
 @import "../../assets/scss/variables";
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/mixins";
 
 .search-bar {
   width: 100%;
@@ -11,8 +11,9 @@
   background-color: $gray-100;
   border-radius: $s16;
   overflow: hidden;
+  transition: $trn3;
 
-  @include shadow;
+  // @include shadow;
 
   label {
     display: inline-block;
@@ -20,9 +21,19 @@
     height: $s8;
     width: $s8;
     min-width: $s8;
-    color: $secondary;
+    color: $primary;
     overflow: hidden;
     margin-right: $s1;
+    transition: $trn3;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  &.focus {
+    @include shadow-secondary;
+    transform: scale(1.02);
   }
 
   input {
@@ -51,8 +62,12 @@
 
     transition: $trn3;
 
-    &:hover{
+    &:hover {
       background-color: darken($primary, 9%);
+    }
+
+    &:disabled{
+      background-color: $gray-500;
     }
 
     @include desktop {

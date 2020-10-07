@@ -1,5 +1,9 @@
-<div class="search-bar">
-  <label for="search-input-id"><i-bs name="search"></i-bs></label>
-  <input id="search-input-id" type="search" class="search" placeholder="Escreva o nome de algum país.">
-  <button>Pesquisar</button>
+<div class="search-bar {{isSearchMode ? 'focus' : ''}}">
+  <label for="search-input">
+    <i-bs name="search"></i-bs>
+  </label>
+  <input #searchInput id="search-input" type="search" (blur)="exitSearchMode(searchInput.value)"
+    (focus)="enterSearchMode()" (keyup)="verifyEmpty(searchInput.value)"
+    (search)="search(searchInput.value)" class="search" placeholder="Escreva o nome de algum país...">
+  <button (click)="search(searchInput.value)" [attr.disabled]="isEmpty ? 'disabled' : null" >Pesquisar</button>
 </div>

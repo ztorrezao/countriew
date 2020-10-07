@@ -1,14 +1,22 @@
 <section class="countries">
   <div class="container">
-    <h1>Países</h1>
+    <!-- Sections title -->
+    <h1>{{messageService.operation === 'search' ? 'Resultados para a pesquisa ' + messageService.term : 'Países'}}</h1>
 
-    <div class="row flex-column flex-md-row align-items-md-center">
+    <!-- actions -->
+    <div class="row flex-column flex-md-row align-items-md-center actions">
       <small class="countries-count">
-        <strong>{{countries.length ? countries.length : 'Nenhum'}}</strong> {{countries.length ? 'países carregados' : 'país carregado'}}
+        <strong>{{countries.length ? countries.length : 'Nenhum'}}</strong>
+        {{countries.length ? 'países carregados' : 'país carregado'}}
       </small>
 
-      <button class="btn-option ml-md-auto">Filtrar por continentes <i-bs class="btn-icon" name="chevron-down"></i-bs></button>
-      <button class="btn-option">Exportar dados listados <i-bs class="btn-icon" name="download"></i-bs></button>
+
+      <!-- <button class="btn-option ml-md-auto">Filtrar por continentes <i-bs class="btn-icon" name="chevron-down"></i-bs>
+        </button> -->
+      <div class="dropdown ml-md-auto">
+        <button class="btn-option ">Exportar dados listados <i-bs class="btn-icon" name="download"></i-bs>
+        </button>
+      </div>
 
       <div class="layout-options">
         <button class="btn-grid-layout active">
@@ -20,10 +28,26 @@
       </div>
     </div>
 
-    <div class="row justify-content-md-between">
-      <div class="col col-md-6 col-lg-4" *ngFor="let country of countries">
-        <app-country-card [country]="country"></app-country-card>
+    <!-- Countries list -->
+    <ng-template [ngIf]="countries.length > 0">
+      <div class="row justify-content-md-between">
+        <div class="col col-md-6 col-lg-4" *ngFor="let country of countries">
+          <app-country-card [country]="country"></app-country-card>
+        </div>
       </div>
-    </div>
+    </ng-template>
+
+    <ng-template [ngIf]="countries.length === 0 && messageService.operation === 'all'">
+      <div class="row align-items-md-center notFound">
+        <h1>Caregando países...</h1>
+      </div>
+    </ng-template>
+
+    <ng-template [ngIf]="countries.length === 0 && messageService.operation === 'search'">
+      <div class="row align-items-md-center notFound">
+        <h1>Nenhum país encontrado! (^-^*)</h1>
+      </div>
+    </ng-template>
+
   </div>
 </section>

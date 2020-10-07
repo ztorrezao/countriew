@@ -5,7 +5,6 @@
   background-color: $gray-300;
   padding: $s16 0;
 
-
   .countries-count,
   .btn-option,
   .layout-options button {
@@ -13,71 +12,88 @@
     font-size: $s5;
   }
 
-  button.btn-option,
-  .layout-options button {
-    border: 1px solid $gray-400;
-    background-color: $gray-100;
-    max-width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: $trn3;
-
-    &:hover,
-    &:focus,
-    &.active {
-      color: $primary;
-      border-color: $gray-500
+  .actions {
+    .dropdown {
+      display: block;
+      min-width: 25rem;
     }
 
-    .btn-icon {
-      font-size: $s6;
-      height: $s6;
-      overflow: hidden;
-      display: inline-block;
-      margin-left: $s2;
-    }
-  }
+    button.btn-option,
+    .layout-options button {
+      border: 1px solid $gray-400;
+      background-color: $gray-100;
+      max-width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: $trn3;
 
-  .btn-option {
-    border-radius: $s14;
-    padding: $s4 $s8;
-  }
-
-  .layout-options {
-    display: none;
-
-    button {
-      padding: $s4;
-
-      &.btn-grid-layout{
-        border-radius: $s14 0 0 $s14;
-      }
-
-      &.btn-table-layout{
-        border-radius: 0 $s14 $s14 0;
+      &:hover,
+      &:focus,
+      &.active {
+        color: $primary;
+        border-color: $gray-500;
       }
 
       .btn-icon {
-        margin: 0;
         font-size: $s6;
         height: $s6;
-        width: $s6;
         overflow: hidden;
         display: inline-block;
+        margin-left: $s2;
+      }
+    }
+
+    .btn-option {
+      border-radius: $s14;
+      padding: $s4 $s8;
+    }
+
+    .layout-options {
+      display: none;
+
+      button {
+        padding: $s4;
+
+        &.btn-grid-layout {
+          border-radius: $s14 0 0 $s14;
+        }
+
+        &.btn-table-layout {
+          border-radius: 0 $s14 $s14 0;
+        }
+
+        .btn-icon {
+          margin: 0;
+          font-size: $s6;
+          height: $s6;
+          width: $s6;
+          overflow: hidden;
+          display: inline-block;
+        }
       }
     }
   }
 
+  // not found text
+  .notFound > h1 {
+    font-weight: $light;
+  }
+
   @include tablet {
-    .btn-option:not(:nth-child(2)), .layout-options {
-      margin-left: $s6;
+    .actions {
+      .btn-option:not(:nth-child(2)),
+      .layout-options {
+        margin-left: $s6;
+      }
     }
   }
 
   @include desktop {
-    .layout-options {
-      display: flex;
+    .actions {
+      .layout-options {
+        display: flex;
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
@@ -12,11 +13,11 @@ import {
   Table,
   Flag,
   Grid3x2,
-  X
+  X,
+  Outlet
 } from 'ngx-bootstrap-icons';
 
 import { AppComponent } from './app.component';
-import { HeroComponent } from './hero/hero.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryComponent } from './country/country.component';
 import { CountryCardComponent } from './country-card/country-card.component';
@@ -39,7 +40,6 @@ const icons = {
 @NgModule({
   declarations: [
     AppComponent,
-    HeroComponent,
     CountriesComponent,
     CountryComponent,
     CountryCardComponent,
@@ -49,10 +49,11 @@ const icons = {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     NgxBootstrapIconsModule.pick(icons)
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -13,6 +13,11 @@ html,
   font-size: 10px;
 }
 
+body {
+  min-height: 100vh;
+  background-color: $secondary;
+}
+
 // input & button reset
 button,
 input {

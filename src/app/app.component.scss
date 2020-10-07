@@ -48,7 +48,7 @@ header {
           bottom: -$s2;
           left: $s6;
           border-radius: $s2;
-          transition: all .3s ease-in;
+          transition: all 0.3s ease-in;
         }
 
         &:hover,
@@ -121,7 +121,12 @@ header {
     }
   }
 
-  // set responsive behavior to the nav
+  // set responsive behavior to the header
+  &.search-mode {
+    display: none;
+  }
+
+  // set responsive behavior to the header
   @include desktop {
     button.mobile-nav-toggle {
       display: none;
@@ -129,6 +134,56 @@ header {
 
     nav.desktop {
       display: block;
+    }
+
+    &.search-mode {
+      display: block;
+    }
+  }
+}
+
+.hero {
+  padding: $s16 0;
+  text-align: center;
+  background-color: $primary;
+  color: $white;
+
+  .intro-text {
+    overflow: hidden;
+    transition: $trn2;
+
+    h1 {
+      margin-bottom: $s14;
+    }
+
+    p {
+      display: none;
+    }
+
+    @include desktop {
+      h1 {
+        margin-bottom: $s9;
+      }
+
+      p {
+        margin-bottom: $s14;
+        display: block;
+      }
+    }
+  }
+
+  &.search-mode {
+    padding: $s3 0;
+
+    .intro-text {
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+  @include desktop {
+    &.search-mode {
+      padding: $s9 0;
     }
   }
 }
