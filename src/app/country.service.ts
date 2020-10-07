@@ -12,6 +12,18 @@ import { MessageService } from './message.service';
 export class CountryService {
   private countriesURL: string = 'https://restcountries.eu/rest/v2';
 
+  private country: Country = {
+    name: '',
+    nativeName: '',
+    capital: '',
+    region: '',
+    subregion: '',
+    population: 0,
+    demonym: '',
+    area: 0,
+    flag: '',
+    timezones: '',
+  };
   private countries: Observable<Country[]>;
   private countriesSource = new Subject<Country[]>();
 
@@ -59,5 +71,13 @@ export class CountryService {
 
   getCountries(): Observable<Country[]> {
     return this.countries;
+  }
+
+  setCountry(country: Country){
+    this.country = country;
+  }
+
+  getCountry(){
+    return this.country;
   }
 }

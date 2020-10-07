@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Country } from '../country';
 import { CountryService } from '../country.service';
-import { ExcelService } from '../excel.service';
+import { FileService } from '../file.service';
 import { MessageService } from '../message.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class CountriesComponent implements OnInit {
   constructor(
     private countryService: CountryService,
     public messageService: MessageService,
-    private excelService: ExcelService
+    private excelService: FileService
   ) {}
 
   ngOnInit() {

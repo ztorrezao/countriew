@@ -1,0 +1,115 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.popup {
+  display: none;
+  &.open {
+    height: 100vh;
+    width: 100vw;
+    background-color: $transparent-lg;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 9001;
+
+    .popup-content {
+      position: relative;
+      background-color: $white;
+      padding: $s7;
+      border-radius: $s3;
+      display: flex;
+      flex-direction: column;
+
+      @include shadow;
+
+      .btn-close-top {
+        width: $s9;
+        height: $s9;
+        border-radius: 50%;
+        background-color: $gray-100;
+        border: solid 0.05rem $primary;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: -$s4;
+        top: -$s4;
+        transition: $trn3;
+
+        .icon {
+          font-size: $s8;
+          width: $s8;
+          height: $s8;
+          overflow: hidden;
+        }
+
+        &:hover {
+          background-color: $primary;
+          color: $gray-100;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: $s8;
+      }
+
+      h2 {
+        font-weight: $regular;
+        margin-bottom: $s9;
+
+        span {
+          font-weight: $bold;
+        }
+      }
+
+      .action-btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+          font-size: $s4;
+          font-weight: $medium;
+          padding: $s4 $s6;
+          border: 0.1rem solid $primary;
+          border-radius: $s14;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: $s2;
+          transition: $trn3;
+
+          .icon {
+            font-size: $s5;
+            height: $s5;
+            margin-left: $s2;
+          }
+
+          &.btn-download {
+            color: $white;
+            background-color: $primary;
+
+            &:hover {
+              background-color: darken($primary, 9%);
+              border-color: darken($primary, 9%);
+            }
+          }
+
+          &.btn-close {
+            color: $primary;
+            margin-right: $s3;
+
+            &:hover {
+              color: $white;
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

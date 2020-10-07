@@ -23,6 +23,7 @@ import { CountryCardComponent } from './country-card/country-card.component';
 import { AboutComponent } from './about/about.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SquareKilometerPipe } from './square-kilometer.pipe';
+import { FlagPopupComponent } from './flag-popup/flag-popup.component';
 
 const icons = {
   List,
@@ -45,6 +46,7 @@ const icons = {
     AboutComponent,
     SearchBarComponent,
     SquareKilometerPipe,
+    FlagPopupComponent,
   ],
   imports: [
     BrowserModule,

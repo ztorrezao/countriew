@@ -14,7 +14,7 @@ const CSV_EXTENSION = '.csv';
 @Injectable({
   providedIn: 'root',
 })
-export class ExcelService {
+export class FileService {
   constructor() {}
 
   /**
@@ -33,7 +33,7 @@ export class ExcelService {
       type: 'array',
     });
 
-    this.saveAsExcelFile(excelBuffer, excelFileName, XLSX_TYPE, XLSX_EXTENSION);
+    this.saveAsFile(excelBuffer, excelFileName, XLSX_TYPE, XLSX_EXTENSION);
   }
 
   /**
@@ -52,7 +52,7 @@ export class ExcelService {
       type: 'array',
     });
 
-    this.saveAsExcelFile(excelBuffer, excelFileName, XLS_TYPE, XLS_EXTENSION);
+    this.saveAsFile(excelBuffer, excelFileName, XLS_TYPE, XLS_EXTENSION);
   }
 
   /**
@@ -71,10 +71,17 @@ export class ExcelService {
       type: 'array',
     });
 
-    this.saveAsExcelFile(excelBuffer, excelFileName, CSV_TYPE, CSV_EXTENSION);
+    this.saveAsFile(excelBuffer, excelFileName, CSV_TYPE, CSV_EXTENSION);
   }
 
-  private saveAsExcelFile(
+  /**
+   * saveImage
+   */
+  public saveImageSVG(URL: string, name: string) {
+    FileSaver.saveAs(URL, `bandeira_${name}.svg`);
+  }
+
+  private saveAsFile(
     buffer: any,
     fileName: string,
     type: string,

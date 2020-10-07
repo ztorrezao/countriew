@@ -1,0 +1,14 @@
+<div class="popup {{this.messageService.isOpen ? 'open' : ''}} row justify-content-center align-items-center">
+  <div class="popup-content col-12 col-md-6">
+    <button class="btn-close-top" (click)="close()"><i-bs class="icon" name="x"></i-bs></button>
+    <img src="{{this.countryService.getCountry().flag}}" alt="Bandeira {{this.countryService.getCountry().demonym}}"
+      srcset="">
+    <h2>Imagem da bandeira <span>{{this.countryService.getCountry().demonym}}</span></h2>
+    <div class="d-flex action-btn">
+      <button class="btn-close" (click)="close()">Fechar <i-bs class="icon" name="x"></i-bs></button>
+      <button class="btn-download"
+        (click)="downloadSVG(this.countryService.getCountry().flag, this.countryService.getCountry().demonym)">Descarregar
+        <i-bs class="icon" name="download"></i-bs></button>
+    </div>
+  </div>
+</div>

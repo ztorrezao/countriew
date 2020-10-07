@@ -8,6 +8,7 @@ export class MessageService {
   status: number;
   operation: string;
   term: string;
+  isOpen: boolean;
 
   setMessage( message: string) {
     this.message = message;
@@ -23,5 +24,9 @@ export class MessageService {
 
   setTerm( term: string) {
     this.term = term;
+  }
+
+  setShowPopUp(isOpen: boolean){
+    this.isOpen = isOpen;
   }
 }

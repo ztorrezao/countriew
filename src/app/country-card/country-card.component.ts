@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Country } from '../country';
+import { CountryService } from '../country.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-country-card',
@@ -9,9 +11,13 @@ import { Country } from '../country';
 export class CountryCardComponent implements OnInit {
   @Input() country: Country;
 
-  constructor() { }
+  constructor(private messageService: MessageService, private countryService: CountryService) { }
 
   ngOnInit(): void {
   }
 
+  openPopup(): void{
+    this.countryService.setCountry(this.country);
+    this.messageService.setShowPopUp(true);
+  }
 }
