@@ -12,6 +12,18 @@
     font-size: $s5;
   }
 
+  .c-pagination{
+    font-size: $s5;
+    display: inline-block;
+    margin-right: $s6;;
+    align-self: center;
+    margin-bottom: $s8;
+
+    .current {
+      background: $primary!important;
+    }
+  }
+
   .actions {
     .dropdown {
       position: relative;
@@ -49,7 +61,6 @@
           color: $primary;
           border-color: $gray-500;
         }
-
       }
     }
 
@@ -79,7 +90,7 @@
       }
     }
 
-    .btn-option{
+    .btn-option {
       border-radius: $s14;
       padding: $s4 $s8;
     }

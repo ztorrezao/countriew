@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs/operators';
 
 import { Country } from '../country';
 import { CountryService } from '../country.service';
@@ -9,9 +10,13 @@ import { MessageService } from '../message.service';
   selector: 'app-countries',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CountriesComponent implements OnInit {
   countries: Array<Country> = [];
+  page: number = 1;
+  total: number;
+  loading: boolean;
   isSearch: boolean;
 
   constructor(
@@ -24,11 +29,19 @@ export class CountriesComponent implements OnInit {
     this.getCountries();
   }
 
+  // getPage(page: 1){
+  //   this.loading = true;
+  //   this.countryService.getCountries().subscribe((countries) => {
+  //     this.countries = countries;
+  //     this.isSearch = this.messageService.operation === 'search';
+  //   });
+  // }
+
   getCountries(): void {
+    this.messageService.setPage(1);
     this.countryService.getCountries().subscribe((countries) => {
       this.countries = countries;
       this.isSearch = this.messageService.operation === 'search';
-      console.log(this.messageService.operation);
     });
   }
 

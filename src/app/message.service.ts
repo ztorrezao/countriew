@@ -9,24 +9,33 @@ export class MessageService {
   operation: string;
   term: string;
   isOpen: boolean;
+  page: number = 1;
 
-  setMessage( message: string) {
+  setMessage(message: string) {
     this.message = message;
   }
 
-  setStatus( status: number) {
+  setStatus(status: number) {
     this.status = status;
   }
 
-  setOperation( operation: string) {
+  setOperation(operation: string) {
     this.operation = operation;
   }
 
-  setTerm( term: string) {
+  setTerm(term: string) {
     this.term = term;
   }
 
-  setShowPopUp(isOpen: boolean){
+  setShowPopUp(isOpen: boolean) {
     this.isOpen = isOpen;
+  }
+
+  getPage() : number {
+    return this.page;
+  }
+
+  setPage(page: number) {
+    this.page = page;
   }
 }

@@ -13,10 +13,10 @@
 
       <!-- <button class="btn-option ml-md-auto">Filtrar por continentes <i-bs class="btn-icon" name="chevron-down"></i-bs>
         </button> -->
-
+        <pagination-controls class="ml-md-auto c-pagination" (pageChange)="this.messageService.setPage($event)"></pagination-controls>
       <ng-template [ngIf]="countries.length > 0">
         <!-- export dropdown -->
-        <div class="dropdown ml-md-auto">
+        <div class="dropdown">
           <button class="btn-option p-0">Exportar dados listados <i-bs class="btn-icon dropdown-btn" name="download">
             </i-bs>
           </button>
@@ -42,12 +42,14 @@
     <!-- Countries list -->
     <ng-template [ngIf]="countries.length > 0">
       <div class="row justify-content-md-between">
-        <div class="col col-md-6 col-lg-4" *ngFor="let country of countries">
+        <div class="col col-md-6 col-lg-4" *ngFor="let country of countries | paginate: { itemsPerPage: 12, currentPage: this.messageService.getPage()}">
           <app-country-card [country]="country"></app-country-card>
         </div>
       </div>
     </ng-template>
-
+    <div class="rew text-center">
+      <pagination-controls class="ml-md-auto c-pagination" (pageChange)="this.messageService.setPage($event)"></pagination-controls>
+    </div>
     <ng-template [ngIf]="countries.length === 0 && messageService.operation === 'all'">
       <div class="row align-items-md-center notFound">
         <h1>Caregando países...</h1>

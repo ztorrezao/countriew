@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Country } from '../country';
 import { CountryService } from '../country.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -13,16 +14,20 @@ export class SearchBarComponent implements OnInit {
   isSearchMode: boolean = false;
   isEmpty: boolean = true;
 
-  constructor(private countryService: CountryService) {}
+  constructor(private countryService: CountryService, public messageService: MessageService) {}
 
   ngOnInit(): void {}
 
   search(term: string): void {
     if (term) {
       this.countryService.indexCountriesByName(term);
+      this.messageService.setPage(1);
+
     } else {
       this.isEmpty = true;
       this.countryService.indexAllCountries();
+      this.messageService.setPage(1);
+
     }
   }
 

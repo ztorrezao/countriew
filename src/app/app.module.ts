@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import {
   List,
@@ -52,6 +54,7 @@ const icons = {
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
     NgxBootstrapIconsModule.pick(icons)
   ],
   providers: [ ],
