@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Country } from '../country';
 import { CountryService } from '../country.service';
+import { ExcelService } from '../excel.service';
 import { MessageService } from '../message.service';
 
 @Component({
@@ -13,7 +14,11 @@ export class CountriesComponent implements OnInit {
   countries: Array<Country> = [];
   isSearch: boolean;
 
-  constructor(private countryService: CountryService, public messageService: MessageService) {}
+  constructor(
+    private countryService: CountryService,
+    public messageService: MessageService,
+    private excelService: ExcelService
+  ) {}
 
   ngOnInit() {
     this.getCountries();
@@ -25,5 +30,26 @@ export class CountriesComponent implements OnInit {
       this.isSearch = this.messageService.operation === 'search';
       console.log(this.messageService.operation);
     });
+  }
+
+  /**
+   * downloadXLSX
+   */
+  downloadXLSX(): void {
+    this.excelService.exportAsXLSXFile(this.countries, 'paises_xlsx');
+  }
+
+  /**
+   * downloadXLSX
+   */
+  downloadXLS(): void {
+    this.excelService.exportAsXLSFile(this.countries, 'paises_xls');
+  }
+
+  /**
+   * downloadCSV
+   */
+  downloadCSV(): void {
+    this.excelService.exportAsCSVFile(this.countries, 'paises_CSV');
   }
 }

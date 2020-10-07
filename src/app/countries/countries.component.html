@@ -14,25 +14,29 @@
       <!-- <button class="btn-option ml-md-auto">Filtrar por continentes <i-bs class="btn-icon" name="chevron-down"></i-bs>
         </button> -->
 
+      <ng-template [ngIf]="countries.length > 0">
         <!-- export dropdown -->
-      <div class="dropdown ml-md-auto">
-        <button class="btn-option p-0">Exportar dados listados <i-bs class="btn-icon dropdown-btn" name="download"></i-bs>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">CSV</a>
-          <a href="#">XLS</a>
-          <a href="#">XLSX</a>
+        <div class="dropdown ml-md-auto">
+          <button class="btn-option p-0">Exportar dados listados <i-bs class="btn-icon dropdown-btn" name="download">
+            </i-bs>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" (click)="downloadCSV()">CSV</a>
+            <a href="#" (click)="downloadXLS()">XLS</a>
+            <a href="#" (click)="downloadXLSX()">XLSX</a>
+          </div>
         </div>
-      </div>
 
-      <div class="layout-options">
-        <button class="btn-grid-layout active">
-          <i-bs class="btn-icon" name="grid"></i-bs>
-        </button>
-        <button class="btn-table-layout">
-          <i-bs class="btn-icon" name="grid-3x2"></i-bs>
-        </button>
-      </div>
+        <!-- layout option -->
+        <div class="layout-options">
+          <button class="btn-grid-layout active">
+            <i-bs class="btn-icon" name="grid"></i-bs>
+          </button>
+          <button class="btn-table-layout">
+            <i-bs class="btn-icon" name="grid-3x2"></i-bs>
+          </button>
+        </div>
+      </ng-template>
     </div>
 
     <!-- Countries list -->
