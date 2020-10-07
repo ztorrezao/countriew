@@ -13,8 +13,7 @@ import {
   Table,
   Flag,
   Grid3x2,
-  X,
-  Outlet
+  X
 } from 'ngx-bootstrap-icons';
 
 import { AppComponent } from './app.component';

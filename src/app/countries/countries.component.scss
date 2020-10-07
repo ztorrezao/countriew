@@ -6,16 +6,51 @@
   padding: $s16 0;
 
   .countries-count,
-  .btn-option,
+  .dropdown,
   .layout-options button {
-    margin-bottom: $s8;
+    margin-bottom: $s9;
     font-size: $s5;
   }
 
   .actions {
     .dropdown {
-      display: block;
-      min-width: 25rem;
+      position: relative;
+      display: inline-block;
+      min-width: 21.3rem;
+      text-align: right;
+
+      &-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: $gray-100;
+        min-width: 21.3rem;
+        text-align: left;
+        @include shadow;
+        z-index: 9000;
+
+        a {
+          color: $secondary;
+          padding: $s4 $s5;
+          text-decoration: none;
+          display: block;
+
+          &:hover {
+            background-color: $gray-400;
+          }
+        }
+      }
+
+      &:hover {
+        .dropdown-content {
+          display: block;
+        }
+        .dropdown-btn {
+          color: $primary;
+          border-color: $gray-500;
+        }
+
+      }
     }
 
     button.btn-option,
@@ -44,7 +79,7 @@
       }
     }
 
-    .btn-option {
+    .btn-option{
       border-radius: $s14;
       padding: $s4 $s8;
     }
@@ -82,7 +117,7 @@
 
   @include tablet {
     .actions {
-      .btn-option:not(:nth-child(2)),
+      // .btn-option:not(:nth-child(2)),
       .layout-options {
         margin-left: $s6;
       }
