@@ -42,7 +42,7 @@
 
 ## 💻 Sobre o projeto
 
-O **Countriew** é um website que tem por objectivo disponibilizar informações de todos os países do mundo, informações como nome, nome nativo, Capital, Região, Sub-região, População, Área, Fuso horário e a sua bandeira, este último disponível para visualização e download.
+O **Countriew** é um website que tem por objectivo disponibilizar informações de todos os países do mundo, informações como nome, nome nativo, capital, região, população, área, Fuso horário e a sua bandeira, este último disponível para visualização e download.
 
 
 Este projecto foi desenvolvido respondendo ao desafio proposto pela empresa [2iBi](https://blog.rocketseat.com.br/primeira-next-level-week/), como uma das etapas da a candidatura a vaga de Desenvolvedor Front-end na mesma.
