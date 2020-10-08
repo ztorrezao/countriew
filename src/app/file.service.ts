@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
+import * as js2xmlparser from 'js2xmlparser';
 
 const XLS_TYPE = 'application/vnd.ms-excel;charset=UTF-8';
 const XLSX_TYPE =
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const CSV_TYPE = 'text/csv;charset=UTF-8';
+const XML_TYPE = 'text/xml;charset=UTF-8';
 
 const XLS_EXTENSION = '.xls';
 const XLSX_EXTENSION = '.xlsx';
 const CSV_EXTENSION = '.csv';
+const XML_EXTENSION = '.xml';
 
 @Injectable({
   providedIn: 'root',
@@ -72,6 +75,12 @@ export class FileService {
     });
 
     this.saveAsFile(excelBuffer, excelFileName, CSV_TYPE, CSV_EXTENSION);
+  }
+
+  public exportAsXMLFile(json: any[], xmlFileName: string): void {
+
+    const xmlBuffer: any = js2xmlparser.parse('paises', { pais: json });
+    this.saveAsFile(xmlBuffer, xmlFileName, XML_TYPE, XML_EXTENSION);
   }
 
   /**

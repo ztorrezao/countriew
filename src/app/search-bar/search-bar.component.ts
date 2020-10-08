@@ -33,6 +33,7 @@ export class SearchBarComponent implements OnInit {
 
   enterSearchMode(): void {
     this.emitSearchEvent(true);
+    window.scrollTo(0, 0);
   }
 
   exitSearchMode(term: string): void {

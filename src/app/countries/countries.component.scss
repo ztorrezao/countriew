@@ -12,15 +12,15 @@
     font-size: $s5;
   }
 
-  .c-pagination{
+  .c-pagination {
     font-size: $s5;
     display: inline-block;
-    margin-right: $s6;;
+    margin-right: $s6;
     align-self: center;
     margin-bottom: $s8;
 
     .current {
-      background: $primary!important;
+      background: $primary !important;
     }
   }
 
@@ -77,8 +77,9 @@
       &:hover,
       &:focus,
       &.active {
-        color: $primary;
-        border-color: $gray-500;
+        color: $white;
+        border-color: $primary;
+        background-color: $primary;
       }
 
       .btn-icon {
@@ -124,6 +125,124 @@
   // not found text
   .notFound > h1 {
     font-weight: $light;
+  }
+
+  .table-country {
+    width: 100%;
+    max-width: 100%;
+    background-color: $gray-100;
+    border-radius: $s3;
+    padding: $s1 0 $s2 0;
+    margin-bottom: $s9;
+    font-size: 1.3rem;
+    color: $secondary;
+    border-collapse: collapse;
+
+    th {
+      text-align: left;
+    }
+
+    tr {
+      transition: $trn3;
+
+      border-bottom: 0.05rem solid $gray-400;
+
+      &:not(:first-child) {
+        &:hover {
+          background-color: $gray-300;
+        }
+      }
+
+      td,
+      th {
+        max-width: 100px;
+        word-break: break-all;
+        padding: $s3;
+      }
+
+      td.options {
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: nowrap;
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+          text-align: right;
+          margin-bottom: 0;
+
+          &-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: $s11;
+            background-color: $gray-100;
+            min-width: 21.3rem;
+            text-align: left;
+            @include shadow;
+            z-index: 9000;
+
+            a {
+              color: $secondary;
+              padding: $s4 $s5;
+              text-decoration: none;
+              display: block;
+
+              &:hover {
+                background-color: $gray-400;
+              }
+            }
+          }
+
+          &:hover {
+            .dropdown-content {
+              display: block;
+            }
+            .dropdown-btn {
+              color: $white;
+              background-color: $primary;
+            }
+          }
+        }
+
+        button {
+          width: $s11;
+          height: $s11;
+          border: 0.1rem solid $primary;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: $trn3;
+
+          .icon {
+            font-size: $s5;
+            height: $s5;
+            display: inline-block;
+          }
+
+          &.btn-download {
+            color: $primary;
+            margin-right: $s3;
+
+            &:hover {
+              color: $white;
+              background-color: $primary;
+            }
+          }
+
+          &.btn-flag {
+            color: $white;
+            background-color: $primary;
+
+            &:hover {
+              background-color: darken($primary, 9%);
+              border-color: darken($primary, 9%);
+            }
+          }
+        }
+      }
+    }
   }
 
   @include tablet {

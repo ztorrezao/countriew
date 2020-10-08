@@ -45,4 +45,11 @@ export class CountryCardComponent implements OnInit {
   downloadCSV(): void {
     this.excelService.exportAsCSVFile([this.country], `${this.country.name}_CSV`);
   }
+
+  /**
+   * downloadXML
+   */
+  downloadXML(): void {
+    this.excelService.exportAsXMLFile([this.country], `${this.country.name}_XML`);
+  }
 }

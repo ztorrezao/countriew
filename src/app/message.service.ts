@@ -10,6 +10,7 @@ export class MessageService {
   term: string;
   isOpen: boolean;
   page: number = 1;
+  isTableView: boolean = false;
 
   setMessage(message: string) {
     this.message = message;
@@ -31,7 +32,11 @@ export class MessageService {
     this.isOpen = isOpen;
   }
 
-  getPage() : number {
+  setIsTableView(isTableView: boolean) {
+    this.isTableView = isTableView;
+  }
+
+  getPage(): number {
     return this.page;
   }
 

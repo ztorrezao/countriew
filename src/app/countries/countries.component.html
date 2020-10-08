@@ -13,7 +13,8 @@
 
       <!-- <button class="btn-option ml-md-auto">Filtrar por continentes <i-bs class="btn-icon" name="chevron-down"></i-bs>
         </button> -->
-        <pagination-controls class="ml-md-auto c-pagination" (pageChange)="this.messageService.setPage($event)"></pagination-controls>
+      <pagination-controls class="ml-md-auto c-pagination" (pageChange)="this.messageService.setPage($event)">
+      </pagination-controls>
       <ng-template [ngIf]="countries.length > 0">
         <!-- export dropdown -->
         <div class="dropdown">
@@ -24,15 +25,16 @@
             <a href="#" (click)="downloadCSV()">CSV</a>
             <a href="#" (click)="downloadXLS()">XLS</a>
             <a href="#" (click)="downloadXLSX()">XLSX</a>
+            <a href="#" (click)="downloadXML()">XML</a>
           </div>
         </div>
 
         <!-- layout option -->
         <div class="layout-options">
-          <button class="btn-grid-layout active">
+          <button class="btn-grid-layout grid-view {{isTableView ? '' : 'active'}}" (click)="setTableView(false)">
             <i-bs class="btn-icon" name="grid"></i-bs>
           </button>
-          <button class="btn-table-layout">
+          <button class="btn-table-layout table-view {{isTableView ? 'active' : ''}}" (click)="setTableView(true)">
             <i-bs class="btn-icon" name="grid-3x2"></i-bs>
           </button>
         </div>
@@ -41,14 +43,64 @@
 
     <!-- Countries list -->
     <ng-template [ngIf]="countries.length > 0">
-      <div class="row justify-content-md-between">
-        <div class="col col-md-6 col-lg-4" *ngFor="let country of countries | paginate: { itemsPerPage: 12, currentPage: this.messageService.getPage()}">
-          <app-country-card [country]="country"></app-country-card>
+
+      <ng-template [ngIf]="isTableView" [ngIfElse]="gridView">
+        <div class="row">
+          <table class="table-country" border="0">
+            <tr>
+              <th>Nome</th>
+              <th>Nome nativo</th>
+              <th>Capital</th>
+              <th>Região</th>
+              <th>Sub-região</th>
+              <th>População</th>
+              <th>Área</th>
+              <th>Fuso horário</th>
+              <th>Acões</th>
+            </tr>
+            <tr
+              *ngFor="let country of countries | paginate: { itemsPerPage: 12, currentPage: this.messageService.getPage()}">
+              <td>{{country.name}}</td>
+              <td>{{country.nativeName}}</td>
+              <td>{{country.capital}}</td>
+              <td>{{country.region}}</td>
+              <td>{{country.subregion}}</td>
+              <td>{{country.population}}</td>
+              <td>{{country.area}}</td>
+              <td>{{country.timezones}}</td>
+              <td class="options">
+                <!-- export dropdown -->
+                <div class="dropdown">
+                  <button class="btn-download dropdown-btn"><i-bs class="icon" name="download"></i-bs></button>
+                  <div class="dropdown-content">
+                    <a href="#" (click)="downloadCountryCSV(country)">CSV</a>
+                    <a href="#" (click)="downloadCountryXLS(country)">XLS</a>
+                    <a href="#" (click)="downloadCountryXLSX(country)">XLSX</a>
+                    <a href="#" (click)="downloadCountryXML(country)">XML</a>
+                  </div>
+                </div>
+
+                <button class="btn-flag" (click)="openPopup(country)"><i-bs class="icon" name="flag">
+                  </i-bs></button>
+              </td>
+            </tr>
+          </table>
         </div>
-      </div>
+      </ng-template>
+
+      <ng-template #gridView>
+        <div class="row justify-content-md-between country-list table">
+          <div class="col col-md-6 col-lg-4"
+            *ngFor="let country of countries | paginate: { itemsPerPage: 12, currentPage: this.messageService.getPage()}">
+            <app-country-card [country]="country"></app-country-card>
+          </div>
+        </div>
+      </ng-template>
+
     </ng-template>
     <div class="rew text-center">
-      <pagination-controls class="ml-md-auto c-pagination" (pageChange)="this.messageService.setPage($event)"></pagination-controls>
+      <pagination-controls class="ml-md-auto c-pagination" (pageChange)="this.messageService.setPage($event)">
+      </pagination-controls>
     </div>
     <ng-template [ngIf]="countries.length === 0 && messageService.operation === 'all'">
       <div class="row align-items-md-center notFound">
