@@ -1,0 +1,106 @@
+.container {
+  width: 100%;
+  padding: 0 $s6;
+  margin: 0 auto;
+}
+
+// row
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// flex configurations
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+// cols
+.col {
+  width: 100%;
+}
+
+// responsiveness
+@include phone {
+  // container
+  .container {
+    max-width: 54rem;
+    padding: 0;
+  }
+}
+
+@include tablet {
+  // container
+  .container {
+    max-width: 72rem;
+    padding: 0;
+  }
+
+  // flex-options
+  .flex-md-row {
+    flex-direction: row;
+  }
+
+  .align-items-md-center {
+    align-items: center;
+  }
+
+  .justify-content-md-between {
+    justify-content: space-between;
+  }
+
+  // columns
+  .col-md-6 {
+    @include col(6);
+  }
+}
+
+@include desktop-sm {
+  // container
+  .container {
+    max-width: 96rem;
+    padding: 0;
+  }
+}
+
+@include desktop {
+  // container
+  .container {
+    max-width: 114rem;
+    padding: 0;
+  }
+
+  // flex options
+  .flex-lg-row {
+    flex-direction: row;
+  }
+
+  .align-items-lg-center {
+    align-items: center;
+  }
+
+  .justify-content-lg-between {
+    justify-content: space-between;
+  }
+
+  // columns
+  .col-lg-4 {
+    @include col(4);
+  }
+
+  .col-lg-8 {
+    @include col(8);
+  }
+
+  .col-lg-10 {
+    @include col(10);
+  }
+}
