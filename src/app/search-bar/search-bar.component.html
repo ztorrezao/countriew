@@ -4,6 +4,6 @@
   </label>
   <input #searchInput id="search-input" type="search" (blur)="exitSearchMode(searchInput.value)"
     (focus)="enterSearchMode()" (keyup)="verifyEmpty(searchInput.value)"
-    (search)="search(searchInput.value)" class="search" placeholder="Escreva o nome de algum país...">
+    (search)="search(searchInput.value)" class="search" placeholder="Escreva o nome do país...">
   <button (click)="search(searchInput.value)" [attr.disabled]="isEmpty ? 'disabled' : null" >Pesquisar</button>
 </div>

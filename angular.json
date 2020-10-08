@@ -20,7 +20,8 @@
             "outputPath": "dist/countriew",
             "allowedCommonJsDependencies": [
               "xlsx",
-              "file-saver"
+              "file-saver",
+              "js2xmlparser"
             ],
             "index": "src/index.html",
             "main": "src/main.ts",

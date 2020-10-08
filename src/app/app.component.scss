@@ -5,19 +5,30 @@ header {
   background-color: $primary;
 
   .logo {
-    white-space: 14.184rem;
+    width: 14.184rem;
     height: auto;
   }
 
   button.mobile-nav-toggle {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
     width: $s13;
     height: $s13;
+    padding:$s2;
 
     background-color: transparent;
     color: $white;
     font-size: $s13;
+
+    &:hover{
+      background-color: darken($primary, 9%);
+    }
+
+    .icon {
+      height: $s13;
+    }
   }
 
   // desktop nav
@@ -64,7 +75,7 @@ header {
   // mobile nav
   nav.mobile {
     top: -100%;
-    left: 0;
+    right: -100%;
     transition: $trn3;
     position: fixed;
     z-index: 9000;
