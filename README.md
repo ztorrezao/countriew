@@ -74,7 +74,7 @@ Este projecto foi desenvolvido respondendo ao desafio proposto pela empresa [2iB
 
 ### Pré-requisitos
 
-Para a execução deste projecto na em uma máquina local precisa-se das seguintes ferramentas:
+Para a execução deste projecto em uma máquina local são necessárias seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Adicionado a isto recomenda-se um bom editor de código como o [VSCode](https://code.visualstudio.com/)
 
