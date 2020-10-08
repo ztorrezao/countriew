@@ -11,6 +11,8 @@ import { MessageService } from './message.service';
 })
 export class CountryService {
   private countriesURL: string = 'https://restcountries.eu/rest/v2';
+  private requestFilters: string = '?fields=name;nativeName;capital;region;subregion;population;demonym;area;flag;timezones';
+
 
   private country: Country = {
     name: '',
@@ -51,7 +53,7 @@ export class CountryService {
   // fetch countries form the api
   indexAllCountries(): void {
     this.messageService.setOperation('all');
-    this.http.get<Country[]>(`${this.countriesURL}/all`).subscribe((data) => {
+    this.http.get<Country[]>(`${this.countriesURL}/all${this.requestFilters}`).subscribe((data) => {
       this.countriesSource.next(data);
     });
   }
@@ -62,7 +64,7 @@ export class CountryService {
     this.messageService.setOperation('search');
     this.messageService.setTerm(term);
     this.http
-      .get<Country[]>(`${this.countriesURL}/name/${term}`)
+      .get<Country[]>(`${this.countriesURL}/name/${term}${this.requestFilters}`)
       .pipe(catchError(this.handleError<Country[]>('search', 404, [])))
       .subscribe((data) => {
         this.countriesSource.next(data);
